@@ -7,10 +7,10 @@
 @import "abstract/mixin";
 @import "page/header";
 @import "page/hero-main";
+@import "page/footer";
 
 body{
-    font-family: 'Barlow', sans-serif;
     font-size: $text-size;
+    font-family: $font-stack-barlow;
     color: $Very-dark-unsaturated-blue;
-    // font-family: 'Fraunces', serif; 
 }

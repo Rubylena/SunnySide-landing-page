@@ -1,1 +1,40 @@
 @import url('https://fonts.googleapis.com/css2?family=Barlow:wght@600&family=Fraunces:opsz,wght@9..144,700;9..144,900&display=swap');
+
+@mixin learn_more($color){
+    text-transform: uppercase;
+    font-family: $font-stack-Fraunces;
+    font-weight: $font-weight-900;
+    padding: 0 0.3em;
+    font-size: 1em;
+    z-index: 1;
+    &:hover{
+        border-bottom: 10px solid $color;
+        width: 8em;
+        border-radius: 6px;
+        &::before{
+            content: "";
+            width: 10px;
+            height: 10px;
+            display: block;
+            margin: 0 0 -1.5em 6.5em;
+        }
+        &::after{
+            content: "";
+            width: 10px;
+            height: 10px;
+            display: block;
+            margin: 0 0 -1.2em 0;
+            border-bottom-left-radius: 10px;
+            border-top-left-radius: 10px;
+        }
+    }
+}
+
+@mixin screen-size($size){
+    @if $size == phone-only{
+        @media screen and (max-width: 596px){@content;}
+    }
+    @else if $size == tablet-only{
+        @media screen and (min-width: 596px) and (max-width: 996px){@content;}
+    }
+}

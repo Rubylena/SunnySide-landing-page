@@ -2,6 +2,10 @@ header{
     background: url('/images/desktop/image-header.jpg') bottom/cover no-repeat;
     height: 100vh;
     color: $White;
+    font-size: $text-size;
+    @include screen-size(phone-only){
+        background: url('/images/mobile/image-header.jpg') bottom/cover no-repeat;
+    }
 }
 
 nav{
@@ -11,22 +15,31 @@ nav{
     padding: 1em 1.5em;
 }
 
-ul{
+.desktop_menu{
     display: flex;
     align-items: center;
+    :nth-child(4){
+        background: $White;
+        border-radius: 20px;
+        color: $Very-dark-unsaturated-blue;
+        font-family: $font-stack-Fraunces;
+    }
     :nth-child(4):hover{
         border-radius: 20px;
         background: $White-rgba;
+        color: $White;
     }
     a {
         text-decoration: none;
         color: $White;
     }
-}
-
-li{
-    list-style: none;
-    padding: 0.5em 1em;
+    li{
+        list-style: none;
+        padding: 0.5em 1em;
+    }
+    @include screen-size(phone-only){
+        display: none;
+    }
 }
 
 .hero{
@@ -35,10 +48,72 @@ li{
     justify-content: center;
     align-items: center;
     text-transform: uppercase;
+    height: 100vh;
     letter-spacing: 0.3em;
-    margin-top: 2em;
-    gap: 2.8em;
-    h1{
-        font-family: 'Fraunces', serif;
+    margin-top: -4.3em;
+    text-align: center;
+    gap: 1.5em;
+    font-size: $text-size-h;
+    font-family: $font-stack-Fraunces;
+    font-weight: $font-weight-900;
+    @include screen-size(phone-only){
+        height: 100%;
+        margin-top: 0;
+        padding: 0 6em;
+        font-size: 1em;
     }
+}
+
+.mobile{
+    display: none;
+    &_menu{
+        @include screen-size(phone-only){
+            background: $White;
+            margin: 20px 27px 0;
+            position: relative;
+            &::before{
+                content: '';
+                height: 0px;
+                width: 0px;
+                border-style: solid;
+                border-color: transparent $White $White transparent;
+                border-width: 20px 20px 20px 20px;
+                position: absolute;
+                top: -20px;
+                right: 0;
+            }
+        ul{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 1em 0;
+                a{
+                    color: $Grayish-blue;
+                    text-decoration: none;
+                }
+                li{
+                    list-style: none;
+                    padding: 1em 1.5em;
+                }
+                :nth-child(4){
+                    background: $Yellow;
+                    border-radius: 30px;
+                    color: $Very-dark-unsaturated-blue;
+                    font-family: $font-stack-Fraunces;
+                }
+            }
+        }
+    }
+    @include screen-size(phone-only){
+        display: block;
+        cursor: pointer;
+    }
+}
+
+.show{
+    display: block;
+}
+
+.hide{
+    display: none;
 }

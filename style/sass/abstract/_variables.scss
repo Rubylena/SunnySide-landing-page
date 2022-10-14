@@ -4,6 +4,7 @@ $Yellow: hsl(51, 100%, 49%);
 $Dark-unsaturated-cyan: hsl(167, 40%, 24%);
 $Dark-blue: hsl(198, 62%, 26%);
 $Dark-moderate-cyan: hsl(168, 34%, 41%);
+$Dark-cyan: hsl(168, 48%, 67%);
 
 //  Neutral
 $Very-dark-unsaturated-blue: hsl(212, 27%, 19%);
@@ -13,4 +14,8 @@ $Grayish-blue: hsl(210, 4%, 67%);
 $White: hsl(0, 0%, 100%);
 $White-rgba: rgba(255,255,255, 0.2);
 
-$text-size: 1.1em;
+$text-size: 1.125em;
+$text-size-h: 2.1875em;
+$font-stack-barlow: 'Barlow', sans-serif;
+$font-stack-Fraunces: 'Fraunces', serif;
+$font-weight-900: 900;
