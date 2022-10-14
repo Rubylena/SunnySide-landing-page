@@ -21,8 +21,10 @@ nav{
     :nth-child(4){
         background: $White;
         border-radius: 20px;
-        color: $Very-dark-unsaturated-blue;
         font-family: $font-stack-Fraunces;
+        a{
+            color: $Very-dark-unsaturated-blue;
+        }
     }
     :nth-child(4):hover{
         border-radius: 20px;
